@@ -14,4 +14,3 @@
 - **GSAP Animations Integration**: 30 minutes
 - **Music Player Feature**: 30 minutes
 - **Testing & Bug Fixes**: 15 minutes
-
