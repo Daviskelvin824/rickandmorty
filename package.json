@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "pages:build": "npm run build",
-    "deploy": "npx wrangler pages deploy out"
+    "deploy": "echo 'Build output ready in out/ directory. Cloudflare Pages will deploy automatically.'"
   },
   "dependencies": {
     "axios": "^1.13.2",
