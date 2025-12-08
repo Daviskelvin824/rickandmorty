@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "opennext:build": "npx @opennextjs/cloudflare build",
-    "pages:build": "npm run opennext:build",
+    "pages:build": "npm run build",
     "install:cloudflare": "npm install --legacy-peer-deps"
   },
   "dependencies": {
@@ -32,4 +31,3 @@
     "wrangler": "^4.53.0"
   }
 }
-

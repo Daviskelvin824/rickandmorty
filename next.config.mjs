@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
     remotePatterns: [
       {
@@ -7,7 +8,9 @@ const nextConfig = {
         hostname: "rickandmortyapi.com",
       },
     ],
+    unoptimized: true, // Required for static export
   },
+  trailingSlash: true,
 };
 
 export default nextConfig;
