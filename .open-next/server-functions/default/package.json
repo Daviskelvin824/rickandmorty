@@ -5,27 +5,29 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "pages:build": "npx @opennextjs/cloudflare build",
+    "preview": "npm run pages:build && npx @opennextjs/cloudflare preview",
+    "deploy": "npm run pages:build",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "start": "next start",
-    "lint": "eslint",
-    "opennext:build": "npx @opennextjs/cloudflare build",
-    "pages:build": "npm run opennext:build"
+    "lint": "eslint"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.14.4",
     "axios": "^1.13.2",
     "gsap": "^3.13.0",
-    "next": "14.2.5",
+    "next": "15.5.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "zustand": "^5.0.9"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.14.4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^9",
-    "eslint-config-next": "14.2.5",
+    "eslint-config-next": "15.5.7",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.53.0"

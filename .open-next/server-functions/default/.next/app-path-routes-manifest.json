@@ -1,1 +1,6 @@
-{"/_not-found/page":"/_not-found","/character/[id]/page":"/character/[id]","/page":"/","/favorites/page":"/favorites"}
+{
+  "/_not-found/page": "/_not-found",
+  "/character/[id]/page": "/character/[id]",
+  "/page": "/",
+  "/favorites/page": "/favorites"
+}
