@@ -12,6 +12,8 @@ import { ErrorState } from "@/components/ErrorState";
 import { getStatusColor, extractEpisodeId, formatDate } from "@/utils";
 import gsap from "gsap";
 
+export const runtime = "edge";
+
 export default function CharacterDetailPage() {
   const params = useParams();
   const router = useRouter();
