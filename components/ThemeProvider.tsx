@@ -11,10 +11,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setMounted(true);
     const root = document.documentElement;
 
-    // Remove any existing theme classes
     root.classList.remove("light", "dark");
 
-    // Apply the current theme
     if (theme === "dark") {
       root.classList.add("dark");
     } else {
@@ -22,7 +20,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, [theme]);
 
-  // Prevent hydration mismatch
   if (!mounted) {
     return <>{children}</>;
   }
