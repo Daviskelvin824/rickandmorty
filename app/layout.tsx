@@ -17,13 +17,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Rick & Morty Explorer",
   description: "Explore characters from the Rick and Morty TV series",
-  icons: {
-    icon: [
-      { url: "/logo2.png", type: "image/png" },
-      { url: "/icon.png", type: "image/png", sizes: "32x32" },
-    ],
-    apple: [{ url: "/logorickmorty.png", type: "image/png" }],
-  },
 };
 
 export default function RootLayout({
