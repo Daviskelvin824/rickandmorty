@@ -13,8 +13,15 @@ export default function FavoritesPage() {
   const { favorites } = useCharacterStore();
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const fetchFavorites = async () => {
       if (favorites.length === 0) {
         setCharacters([]);
@@ -35,7 +42,7 @@ export default function FavoritesPage() {
     };
 
     fetchFavorites();
-  }, [favorites]);
+  }, [favorites, mounted]);
 
   if (loading) {
     return (
