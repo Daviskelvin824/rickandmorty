@@ -14,6 +14,8 @@ export default function FavoritesPage() {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -44,18 +46,6 @@ export default function FavoritesPage() {
     fetchFavorites();
   }, [favorites, mounted]);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center relative">
-        <LoadingSpinner size="lg" />
-      </div>
-    );
-  }
-
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
-
-  // Animate title
   useEffect(() => {
     if (titleRef.current) {
       gsap.fromTo(
@@ -66,7 +56,6 @@ export default function FavoritesPage() {
     }
   }, []);
 
-  // Animate cards with stagger
   useEffect(() => {
     if (cardsRef.current && characters.length > 0) {
       const cards = cardsRef.current.querySelectorAll("[data-fav-card]");
@@ -84,6 +73,14 @@ export default function FavoritesPage() {
       );
     }
   }, [characters]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center relative">
+        <LoadingSpinner size="lg" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen relative">
